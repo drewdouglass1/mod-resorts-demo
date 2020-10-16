@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: modresortswar
+  name: modresortswar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: modresortswar
+  template:
+    metadata:
+      labels:
+        app: modresortswar
+    spec:
+      containers:
+        - image: docker.io/application
+          imagePullPolicy: Always
+          name: modresortswar
+          ports:
+            - containerPort: 9080
